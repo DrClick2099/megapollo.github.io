@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>MEGA POLLO - El Mega del Sabor | Menú Móvil</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Typography: Alfa Slab One, Bebas Neue, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Inter:wght@400;600;700;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0a0a0a',
+              surface: '#141414',
+              card: '#1c1c1c',
+              cardBorder: '#2b2b2b',
+              flameRust: '#C95228',
+              flameGold: '#E5A823',
+              flameYellow: '#FFC837',
+              accentRed: '#DC2626',
+              fireGlow: '#FF5722'
+            }
+          },
+          fontFamily: {
+            slab: ['"Alfa Slab One"', 'serif'],
+            bebas: ['"Bebas Neue"', 'sans-serif'],
+            oswald: ['"Oswald"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    input, textarea, select {
+      user-select: text;
+    }
+    .glow-gold {
+      filter: drop-shadow(0 0 12px rgba(229, 168, 35, 0.45));
+    }
+    .glow-badge {
+      box-shadow: 0 0 18px rgba(201, 82, 40, 0.35);
+    }
+    .tap-target {
+      min-height: 48px;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-white font-sans antialiased min-h-screen pb-36">
+
+  <header class="sticky top-0 z-40 bg-brand-black/95 backdrop-blur-md border-b border-brand-cardBorder shadow-2xl">
+    <div class="max-w-xl mx-auto px-4 py-2.5 flex items-center justify-between">
+      
+      <!-- Brand Logo & Identity -->
+      <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div id="logo-wrapper" class="w-14 h-14 relative flex-shrink-0 flex items-center justify-center glow-gold">
+          <!-- Vector exact replica of MP2@4x-8.png (Black Rooster inside Terracotta + Amber Flames) -->
+          <svg id="svg-logo-graphic" viewBox="0 0 500 500" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(10, 10) scale(0.96)">
+              <!-- Outer Fire Shell (Rust Terracotta #C95228) -->
+              <path d="M250,5 C265,30 280,35 290,65 C305,60 325,75 330,105 C355,85 385,115 375,150 C410,135 435,175 420,215 C450,210 475,250 455,295 C480,315 480,370 425,410 C400,430 365,445 320,445 C305,475 280,480 270,490 C258,470 250,445 240,430 C220,445 190,445 170,430 C155,465 140,470 120,485 C130,450 125,430 110,420 C70,435 30,390 20,335 C10,290 35,260 25,230 C15,190 40,160 70,165 C75,130 100,105 125,115 C135,70 180,65 190,40 C195,15 230,10 250,5 Z" fill="#C95228" />
+
+              <!-- Inner Flame Layer (Warm Amber Gold #E5A823) -->
+              <path d="M245,45 C260,70 275,85 270,115 C295,95 320,120 310,150 C335,145 355,180 340,215 C370,210 385,250 370,285 C390,305 380,350 345,375 C320,390 295,395 265,395 C250,425 230,430 220,440 C210,420 205,400 195,390 C175,405 155,405 140,390 C130,420 115,425 100,435 C110,405 105,390 95,380 C65,390 45,355 45,315 C45,280 65,255 60,230 C55,200 70,175 95,180 C100,150 120,130 140,140 C150,100 185,95 195,75 C205,50 230,50 245,45 Z" fill="#E5A823" />
+
+              <!-- Silhouette of the Rooster (Solid Black #0A0A0A as in MP2) -->
+              <path d="M245,175 C252,165 268,162 268,175 C278,168 290,172 288,190 C300,188 308,200 300,218 C292,230 312,250 310,285 C308,310 290,340 265,350 C255,342 260,325 248,335 C242,340 235,350 224,346 C212,322 228,298 228,275 C216,285 208,278 205,266 C202,250 220,242 228,235 C212,232 200,236 192,246 C188,235 194,222 206,216 C194,216 182,222 174,230 C180,212 192,202 212,200 C215,188 225,182 236,176 Z" fill="#0A0A0A" />
+
+              <!-- Sharp Curved Beak Facing Left -->
+              <path d="M192,230 Q145,245 140,252 Q175,258 190,265 Z" fill="#0A0A0A" />
+
+              <!-- Hanging Wattle/Caruncle below beak -->
+              <path d="M190,265 C185,290 180,315 185,340 C190,365 205,370 215,350 C220,335 220,305 210,280 Z" fill="#0A0A0A" />
+
+              <!-- Rooster Eye Cutout (Rust Orange #C95228) -->
+              <polygon points="198,222 214,216 210,228" fill="#C95228" />
+
+              <!-- Chest Feather Details -->
+              <path d="M240,430 L255,370 L270,410 L285,360" stroke="#0A0A0A" stroke-width="12" stroke-linecap="round" fill="none" />
+            </g>
+          </svg>
+          <img id="custom-logo-img" class="w-full h-full object-contain hidden" alt="Logo Mega Pollo">
+        </div>
+
+        <div class="flex flex-col">
+          <span class="font-slab text-xl tracking-normal text-brand-flameGold uppercase leading-none drop-shadow">
+            MEGA POLLO
+          </span>
+          <span class="font-bebas text-xs tracking-widest text-brand-flameRust uppercase italic leading-none mt-1">
+            EL MEGA DEL SABOR
+          </span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button 
+          onclick="toggleLogoOptions()" 
+          title="Opciones de Logotipo"
+          class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-700 text-neutral-400 hover:text-white flex items-center justify-center text-sm active:scale-95"
+        >
+          <i class="fa-solid fa-image"></i>
+        </button>
+
+        <button 
+          onclick="scrollToSection('orden-final')" 
+          class="bg-gradient-to-r from-brand-flameRust to-brand-fireGlow text-white px-3 py-2 rounded-xl flex items-center gap-2 border border-brand-flameGold/30 shadow-lg active:scale-95 transition"
+        >
+          <i class="fa-solid fa-bag-shopping text-brand-flameGold text-base"></i>
+          <div class="flex flex-col items-start leading-none">
+            <span id="header-cart-qty" class="text-xs font-bold bg-black/60 px-1.5 py-0.5 rounded text-brand-flameGold">0</span>
+            <span id="header-cart-total" class="text-sm font-extrabold text-white mt-0.5">$0</span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Hidden dropdown to upload image or set custom image URL -->
+    <div id="logo-options-panel" class="hidden bg-brand-surface border-t border-b border-brand-cardBorder px-4 py-2.5 max-w-xl mx-auto text-xs">
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="font-bold text-neutral-300">Imagen del Logo</span>
+        <button onclick="toggleLogoOptions()" class="text-neutral-400 hover:text-white text-base">&times;</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <label class="bg-neutral-800 hover:bg-neutral-700 text-white font-semibold px-3 py-2 rounded-lg cursor-pointer flex items-center gap-1.5 border border-neutral-700">
+          <i class="fa-solid fa-upload"></i> Subir archivo (PNG/JPG)
+          <input type="file" id="logo-file-input" accept="image/*" class="hidden" onchange="handleLogoUpload(this)">
+        </label>
+        <button onclick="resetLogoToSVG()" class="bg-neutral-800 hover:bg-neutral-700 text-neutral-300 px-3 py-2 rounded-lg border border-neutral-700">
+          Restaurar SVG Original
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-xl mx-auto px-4 pt-3">
+    <div class="bg-gradient-to-r from-brand-card via-brand-surface to-brand-card border-2 border-brand-flameGold/90 rounded-2xl p-3.5 shadow-xl glow-badge">
+      <div class="flex items-center justify-between gap-2 border-b border-neutral-800 pb-2 mb-2">
+        
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-brand-flameGold/20 border border-brand-flameGold/40 text-brand-flameGold flex items-center justify-center text-lg">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div>
+            <span class="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block leading-none">Horario de Asador</span>
+            <span class="font-bebas text-2xl text-brand-flameGold tracking-wide leading-none">10:00 AM – 5:00 PM</span>
+          </div>
+        </div>
+
+        <div id="live-store-status" class="px-2.5 py-1.5 rounded-xl text-xs font-black flex items-center gap-1.5 uppercase transition-all">
+          <span class="w-2 h-2 rounded-full bg-neutral-500"></span> Comprobando...
+        </div>
+
+      </div>
+
+      <div class="flex items-center justify-between text-xs pt-0.5">
+        <p class="text-neutral-300 font-semibold flex items-center gap-1.5">
+          <i class="fa-solid fa-car-side text-brand-flameRust text-sm"></i>
+          <span>Entrega en ventanilla sin bajar de tu vehículo o en mostrador.</span>
+        </p>
+        <button onclick="scrollToSection('orden-final')" class="text-brand-flameGold underline font-bold hover:text-yellow-300 flex-shrink-0 ml-1">
+          Pedir
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <nav class="max-w-xl mx-auto px-4 mt-3.5 sticky top-[66px] z-30 py-1.5 bg-brand-black/95 backdrop-blur-sm">
+    <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+      <button onclick="setCategory('paquetes', this)" class="cat-pill active flex-shrink-0 px-4 py-2.5 rounded-xl font-bold text-xs uppercase bg-brand-flameGold text-black border border-brand-flameGold shadow-md flex items-center gap-1.5 transition">
+        <i class="fa-solid fa-fire text-brand-flameRust"></i> Paquetes Fuertes
+      </button>
+      <button onclick="setCategory('alitas-costillas', this)" class="cat-pill flex-shrink-0 px-4 py-2.5 rounded-xl font-bold text-xs uppercase bg-brand-surface text-neutral-300 border border-neutral-700 flex items-center gap-1.5 transition">
+        <i class="fa-solid fa-drumstick-bite text-brand-flameRust"></i> Costillas & Alitas
+      </button>
+      <button onclick="setCategory('extras', this)" class="cat-pill flex-shrink-0 px-4 py-2.5 rounded-xl font-bold text-xs uppercase bg-brand-surface text-neutral-300 border border-neutral-700 flex items-center gap-1.5 transition">
+        <i class="fa-solid fa-bowl-food text-brand-flameGold"></i> Extras y Guarniciones
+      </button>
+    </div>
+  </nav>
+
+  <main class="max-w-xl mx-auto px-4 mt-3">
+    <div id="products-catalog" class="space-y-4">
+      <!-- Injected via JavaScript -->
+    </div>
+  </main>
+
+  <section id="orden-final" class="max-w-xl mx-auto px-4 mt-8 pt-2">
+    <div class="bg-brand-surface border-2 border-brand-flameRust rounded-3xl p-4 md:p-5 shadow-2xl relative overflow-hidden">
+      
+      <div class="absolute -right-6 -bottom-6 opacity-10 text-9xl text-brand-flameRust pointer-events-none">
+        <i class="fa-solid fa-fire"></i>
+      </div>
+
+      <div class="flex items-center justify-between pb-3 border-b border-neutral-800">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-flameRust/20 text-brand-flameGold flex items-center justify-center text-lg">
+            <i class="fa-solid fa-receipt"></i>
+          </div>
+          <h2 class="font-slab text-lg text-brand-flameGold uppercase tracking-wide">
+            TU PEDIDO
+          </h2>
+        </div>
+        <button onclick="clearEntireCart()" class="text-xs text-red-400 hover:text-red-300 font-bold px-2.5 py-1 bg-red-950/40 rounded-lg border border-red-900/60">
+          <i class="fa-solid fa-trash-can mr-1"></i> Vaciar
+        </button>
+      </div>
+
+      <!-- Real-time cart items -->
+      <div id="cart-list" class="divide-y divide-neutral-800/80 my-3">
+        <!-- Rendered items -->
+      </div>
+
+      <!-- Price Breakdown Card -->
+      <div class="bg-black/90 rounded-2xl p-4 border border-neutral-800 space-y-2 mt-4">
+        <div class="flex justify-between text-xs text-neutral-300 font-semibold">
+          <span>Artículos seleccionados:</span>
+          <span id="summary-items-count" class="text-white font-bold">0 piezas</span>
+        </div>
+        <div class="flex justify-between text-xs text-neutral-300 font-semibold">
+          <span>Salsas y guarniciones del paquete:</span>
+          <span class="text-emerald-400 font-bold uppercase">¡Incluidas!</span>
+        </div>
+        <div class="pt-2 border-t border-neutral-800 flex justify-between items-center">
+          <span class="font-slab text-base text-brand-flameGold">TOTAL A PAGAR:</span>
+          <span id="summary-total-price" class="font-bebas text-3xl md:text-4xl text-white tracking-wider">
+            $0 <span class="text-xs font-sans text-brand-flameGold font-bold">MXN</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-5 space-y-4">
+        
+        <!-- Mandatory Customer Full Name -->
+        <div>
+          <label for="input-cust-name" class="block font-bold text-white text-sm mb-1.5 flex items-center justify-between">
+            <span><i class="fa-solid fa-user-tag text-brand-flameGold mr-1.5"></i> Nombre completo de quien recoge:</span>
+            <span class="text-[11px] text-brand-flameRust font-black uppercase tracking-wider">Obligatorio</span>
+          </label>
+          <input 
+            type="text" 
+            id="input-cust-name" 
+            placeholder="Ej. Roberto Sánchez García" 
+            class="w-full bg-black border-2 border-neutral-700 focus:border-brand-flameGold rounded-xl px-4 py-3.5 text-white font-bold text-base focus:outline-none placeholder-neutral-500 tap-target"
+          />
+        </div>
+
+        <!-- Delivery Mode Options -->
+        <div>
+          <label class="block font-bold text-white text-sm mb-1.5">
+            <i class="fa-solid fa-location-dot text-brand-flameGold mr-1.5"></i> Forma de entrega:
+          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="cursor-pointer">
+              <input type="radio" name="order-mode" value="Paso en Coche (Drive-Thru / Sin bajarme)" checked class="peer sr-only">
+              <div class="p-3 bg-black rounded-xl border-2 border-neutral-700 peer-checked:border-brand-flameGold peer-checked:bg-brand-flameGold/15 text-center font-bold text-xs text-neutral-300 peer-checked:text-white transition tap-target flex flex-col items-center justify-center">
+                <i class="fa-solid fa-car text-brand-flameRust text-lg mb-1"></i>
+                Paso en Coche
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="order-mode" value="Recojo en Mostrador / Barra" class="peer sr-only">
+              <div class="p-3 bg-black rounded-xl border-2 border-neutral-700 peer-checked:border-brand-flameGold peer-checked:bg-brand-flameGold/15 text-center font-bold text-xs text-neutral-300 peer-checked:text-white transition tap-target flex flex-col items-center justify-center">
+                <i class="fa-solid fa-store text-brand-flameGold text-lg mb-1"></i>
+                En Mostrador
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Vehicle Details (Useful for Drive-Thru identification) -->
+        <div>
+          <label for="input-car-info" class="block font-bold text-white text-sm mb-1.5">
+            <i class="fa-solid fa-car-side text-brand-flameGold mr-1.5"></i> Auto / Color / Placas (para entrega al coche):
+          </label>
+          <input 
+            type="text" 
+            id="input-car-info" 
+            placeholder="Ej. Nissan Versa Gris / Placas ABC" 
+            class="w-full bg-black border-2 border-neutral-700 focus:border-brand-flameGold rounded-xl px-4 py-3 text-white text-sm font-semibold focus:outline-none placeholder-neutral-500 tap-target"
+          />
+        </div>
+
+        <!-- Approximate Pickup Time (Constrained to 10:00 AM - 5:00 PM) -->
+        <div>
+          <label class="block font-bold text-white text-sm mb-1.5 flex items-center justify-between">
+            <span><i class="fa-solid fa-clock text-brand-flameGold mr-1.5"></i> Hora de paso (10:00 AM – 5:00 PM):</span>
+            <span class="text-[11px] text-brand-flameGold font-bold">Un toque:</span>
+          </label>
+
+          <!-- 1-Tap Quick Arrival Pills -->
+          <div class="grid grid-cols-4 gap-1.5 mb-2.5">
+            <button type="button" onclick="quickTimeOffset(15, this)" class="time-pill bg-black border-2 border-neutral-700 hover:border-brand-flameGold py-2.5 rounded-xl text-xs font-bold text-center active:scale-95 transition">
+              +15 min
+            </button>
+            <button type="button" onclick="quickTimeOffset(30, this)" class="time-pill bg-black border-2 border-neutral-700 hover:border-brand-flameGold py-2.5 rounded-xl text-xs font-bold text-center active:scale-95 transition">
+              +30 min
+            </button>
+            <button type="button" onclick="quickTimeOffset(45, this)" class="time-pill bg-black border-2 border-neutral-700 hover:border-brand-flameGold py-2.5 rounded-xl text-xs font-bold text-center active:scale-95 transition">
+              +45 min
+            </button>
+            <button type="button" onclick="quickTimeOffset(60, this)" class="time-pill bg-black border-2 border-neutral-700 hover:border-brand-flameGold py-2.5 rounded-xl text-xs font-bold text-center active:scale-95 transition">
+              +1 hora
+            </button>
+          </div>
+
+          <div class="relative">
+            <input 
+              type="time" 
+              id="input-pickup-time" 
+              min="10:00" 
+              max="17:00"
+              value="13:00"
+              class="w-full bg-black border-2 border-neutral-700 focus:border-brand-flameGold rounded-xl px-4 py-3.5 text-white text-base font-bold focus:outline-none tap-target"
+            />
+          </div>
+          <p class="text-[11px] text-neutral-400 mt-1">Horario del asador: de 10:00 AM a 5:00 PM únicamente.</p>
+        </div>
+
+        <!-- Special Kitchen Notes -->
+        <div>
+          <label for="input-notes" class="block font-bold text-white text-sm mb-1.5">
+            <i class="fa-solid fa-comment-dots text-brand-flameGold mr-1.5"></i> Notas especiales para cocina:
+          </label>
+          <input 
+            type="text" 
+            id="input-notes" 
+            placeholder="Ej. Pollo bien dorado, salsas aparte, etc."
+            class="w-full bg-black border-2 border-neutral-700 focus:border-brand-flameGold rounded-xl px-4 py-3 text-white text-sm focus:outline-none placeholder-neutral-500 tap-target"
+          />
+        </div>
+
+        <div class="pt-2">
+          <button 
+            type="button" 
+            onclick="sendOrderViaWhatsApp()"
+            class="w-full bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 hover:brightness-110 active:scale-[0.98] text-white font-slab text-lg md:text-xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-2xl transition border-2 border-green-300/40 glow-badge tap-target"
+          >
+            <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
+            <span>ENVIAR PEDIDO POR WHATSAPP</span>
+          </button>
+
+          <div class="flex items-center justify-between text-[11px] text-neutral-400 mt-2.5 px-1">
+            <span><i class="fa-solid fa-circle-check text-green-400 mr-1"></i> Se envía desglosado a cocina</span>
+            <div class="text-neutral-400 flex items-center gap-1 font-semibold">
+              <i class="fa-brands fa-whatsapp text-emerald-400"></i> Tel: <span id="label-target-phone" class="text-white">449 456 6133</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="sticky-bar" class="fixed bottom-0 inset-x-0 bg-brand-black/95 backdrop-blur-md border-t-2 border-brand-flameRust p-3 z-30 shadow-2xl transition-transform duration-300">
+    <div class="max-w-xl mx-auto flex items-center justify-between gap-3">
+      
+      <div class="flex items-center gap-2.5">
+        <div class="w-12 h-12 rounded-xl bg-brand-flameRust flex items-center justify-center font-slab text-xl text-white shadow">
+          <span id="float-badge-count">0</span>
+        </div>
+        <div>
+          <span class="text-[10px] uppercase font-bold text-neutral-400 block tracking-wider leading-tight">TOTAL SUMADO:</span>
+          <span id="float-badge-total" class="font-bebas text-2xl md:text-3xl text-brand-flameGold leading-none tracking-wide">$0 MXN</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button 
+          onclick="scrollToSection('orden-final')" 
+          class="bg-brand-flameGold hover:bg-yellow-400 active:scale-95 text-black font-slab text-sm px-4 py-3 rounded-xl flex items-center gap-1.5 shadow-lg tap-target"
+        >
+          <span>VER PEDIDO</span>
+          <i class="fa-solid fa-arrow-down text-xs"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="modal-ticket" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-surface border-2 border-brand-flameGold max-w-sm w-full rounded-3xl p-5 text-white shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-2xl font-bold">
+        &times;
+      </button>
+
+      <div class="text-center pb-3 border-b border-neutral-800">
+        <span class="font-bebas text-xs text-brand-flameRust tracking-widest block uppercase">Comprobante de Pedido</span>
+        <h3 class="font-slab text-2xl text-brand-flameGold">MEGA POLLO</h3>
+        <p class="text-[11px] text-neutral-400 italic">"El Mega del Sabor" • Horario 10am - 5pm</p>
+      </div>
+
+      <div id="ticket-content" class="my-4 font-mono text-xs space-y-2 bg-black/70 p-3 rounded-xl border border-neutral-800 max-h-60 overflow-y-auto">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="flex gap-2 pt-1">
+        <button onclick="closeModal()" class="flex-1 bg-neutral-800 text-white font-bold py-3 rounded-xl text-xs">
+          Cerrar
+        </button>
+        <button onclick="window.print()" class="bg-brand-flameGold text-black font-slab px-4 py-3 rounded-xl text-xs flex items-center justify-center gap-1">
+          <i class="fa-solid fa-print"></i> Imprimir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="quick-toast" class="fixed top-16 inset-x-4 max-w-md mx-auto z-50 transform -translate-y-36 transition-transform duration-300 bg-neutral-900/95 border-2 border-brand-flameGold text-white p-3 rounded-2xl shadow-2xl flex items-center gap-3 pointer-events-none">
+    <div class="w-8 h-8 rounded-full bg-brand-flameGold text-black flex items-center justify-center font-bold text-sm flex-shrink-0">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div class="flex-1 min-w-0">
+      <h5 id="toast-head" class="font-bold text-xs text-brand-flameGold truncate">Agregado</h5>
+      <p id="toast-body" class="text-[11px] text-neutral-300 truncate">Se ha sumado al total</p>
+    </div>
+  </div>
+
+  <script>
+    // Fixed Official Restaurant WhatsApp destination (449 456 6133)
+    const restaurantWhatsApp = "524494566133";
+
+    // Products Catalog faithfully extracted from official advertising images
+    const CATALOG = [
+      // 1. Paquetes Principales
+      {
+        id: "pollo-rostizado",
+        title: "Pollo Rostizado",
+        category: "paquetes",
+        price: 200,
+        badge: "Dorado & Jugoso",
+        desc: "Pollo rostizado tradicional en su punto dorado y jugoso.",
+        includes: ["Papas Ajillo", "Salsa Roja", "Lechuga", "Aderezo Especial", "Chile Toreado"],
+        options: ["Entero", "En 4 Piezas", "En 8 Piezas"]
+      },
+      {
+        id: "pollo-asado",
+        title: "Pollo Asado",
+        category: "paquetes",
+        price: 200,
+        badge: "Al Carbón",
+        desc: "Pollo marinado al estilo de la casa y asado al carbón.",
+        includes: ["Papas Ajillo", "Salsa Roja", "Lechuga", "Aderezo Especial", "Chile Toreado"],
+        options: ["Entero", "En Piezas"]
+      },
+      {
+        id: "mega-combo",
+        title: "Mega Combo",
+        category: "paquetes",
+        price: 315,
+        badge: "El Más Completo",
+        desc: "1 Pollo Grande + Mole + Arroz + Refresco 2 Litros y guarniciones.",
+        includes: [
+          "1 Pollo Grande (Rostizado o Asado)",
+          "1/2 Mole Tradicional",
+          "1/2 Arroz Rojo",
+          "1 Refresco 2 Litros (Pepsi)",
+          "Papas a la Francesa",
+          "Papas Ajillo",
+          "Salsa Roja",
+          "Lechuga",
+          "Aderezo Especial",
+          "Chile Toreado"
+        ],
+        options: ["Con Pollo Rostizado", "Con Pollo Asado"]
+      },
+      {
+        id: "pollo-kentucky",
+        title: "Pollo Kentucky (8 Piezas)",
+        category: "paquetes",
+        price: 260,
+        badge: "Ultra Crujiente",
+        desc: "8 piezas empanizadas doradas estilo Kentucky.",
+        includes: [
+          "8 Piezas de Pollo",
+          "Papas Francesas",
+          "Papas Ajillo",
+          "Salsa Roja",
+          "Aderezo Especial",
+          "Chimichurri",
+          "Catsup"
+        ],
+        options: ["Receta Clásica", "Con Toque Picante"]
+      },
+      {
+        id: "parrilla-mix",
+        title: "Parrilla Mix",
+        category: "paquetes",
+        price: 380,
+        badge: "Pollo + Costillas",
+        desc: "1 Pollo Asado entero con 1/2 kilo de jugosas costillas.",
+        includes: [
+          "1 Pollo Asado",
+          "1/2 Kilo de Costillas",
+          "Papas Ajillo",
+          "Salsa Roja",
+          "Lechuga",
+          "Aderezo Especial",
+          "Chimichurri",
+          "Chile Toreado"
+        ],
+        options: ["Costillas Salsa BBQ", "Costillas Adobadas"]
+      },
+      {
+        id: "mega-supremo",
+        title: "Mega Supremo",
+        category: "paquetes",
+        price: 340,
+        badge: "Pollo + Alitas",
+        desc: "1 Pollo Grande con orden completa de alitas y papas francesas.",
+        includes: [
+          "1 Pollo Grande (Rostizado o Asado)",
+          "1 Orden de Alitas",
+          "Papas a la Francesa",
+          "Papas Ajillo",
+          "Salsa Roja",
+          "Lechuga",
+          "Aderezo Especial",
+          "Chile Toreado"
+        ],
+        options: [
+          "Pollo Rostizado + Alitas BBQ", 
+          "Pollo Asado + Alitas BBQ", 
+          "Pollo Rostizado + Alitas Mango Habanero", 
+          "Pollo Asado + Alitas Adobadas"
+        ]
+      },
+
+      // 2. Costillas y Alitas
+      {
+        id: "costillas-bbq",
+        title: "Costillas BBQ / Adobadas",
+        category: "alitas-costillas",
+        price: 400,
+        badge: "Costillar Completo",
+        desc: "Costillar horneado tierno bañado en salsa a elegir.",
+        includes: [
+          "Costillar Completo",
+          "Papas Ajillo",
+          "Salsa Roja",
+          "Lechuga",
+          "Aderezo Especial",
+          "Chimichurri",
+          "Chile Toreado"
+        ],
+        options: ["Glaseado BBQ Dulce", "Adobadas con Especias", "Mitad BBQ / Mitad Adobadas"]
+      },
+      {
+        id: "alitas-orden",
+        title: "Orden de Alitas",
+        category: "alitas-costillas",
+        price: 120,
+        badge: "Crujientes",
+        desc: "Alitas bañadas en la salsa de tu elección con dip ranch.",
+        includes: ["Orden de Alitas", "Aderezo Ranch"],
+        options: ["Salsa BBQ", "Salsa Adobadas", "Salsa Mango Habanero", "Salsa Mixta"]
+      },
+
+      // 3. Extras y Complementos
+      { id: "extra-mole", title: "1/2 Mole Tradicional", category: "extras", price: 35, badge: "Guarnición", desc: "Mole poblano casero listo para servir.", includes: ["Porción 1/2 Litro"], options: [] },
+      { id: "extra-arroz", title: "1/2 Arroz Rojo", category: "extras", price: 20, badge: "Guarnición", desc: "Arroz esponjado a la mexicana.", includes: ["Porción 1/2 Litro"], options: [] },
+      { id: "extra-espagueti", title: "Espagueti a la Crema", category: "extras", price: 35, badge: "Guarnición", desc: "Espagueti cremoso sazonado.", includes: ["Porción individual grande"], options: [] },
+      { id: "extra-papas-francesas", title: "Papas a la Francesa", category: "extras", price: 40, badge: "Crujientes", desc: "Canasta de papas fritas al momento.", includes: ["Catsup y aderezos"], options: [] },
+      { id: "extra-papas-gajo", title: "Papas Gajo Sazonadas", category: "extras", price: 50, badge: "Especiales", desc: "Gajos dorados sazonados con finas hierbas.", includes: ["Aderezo especial"], options: [] },
+      { id: "extra-papas-fritas", title: "Papas Fritas Chips", category: "extras", price: 35, badge: "Botana", desc: "Papas naturales fritas estilo chips crujientes.", includes: ["Salsa botanera"], options: [] },
+      { id: "extra-papas-ajillo", title: "Papas al Ajillo", category: "extras", price: 35, badge: "Especialidad", desc: "Papas cambray bañadas en ajo dorado y guajillo.", includes: ["Receta de la casa"], options: [] },
+      { id: "extra-nuggets", title: "Orden de Nuggets (6 Pzas)", category: "extras", price: 50, badge: "Infantil", desc: "Nuggets de pollo crujientes.", includes: ["Catsup"], options: [] },
+      { id: "extra-flautas", title: "Orden de Flautas de Pollo", category: "extras", price: 40, badge: "Crujientes", desc: "Flautas doradas de pollo deshebrado.", includes: ["Crema y lechuga"], options: [] },
+      { id: "extra-refresco", title: "Refresco 2 Litros (Pepsi)", category: "extras", price: 40, badge: "Bebida", desc: "Refresco familiar frío.", includes: ["Botella de 2L"], options: ["Pepsi", "Manzanita Sol", "Mirinda", "7Up"] }
+    ];
+
+    // State Variables
+    let cart = [];
+
+    function checkOperatingHours() {
+      const now = new Date();
+      const currentHours = now.getHours();
+      const statusBadge = document.getElementById('live-store-status');
+      if (!statusBadge) return;
+      
+      const isOpen = (currentHours >= 10 && currentHours < 17);
+
+      if (isOpen) {
+        statusBadge.className = "px-2.5 py-1.5 rounded-xl text-xs font-black flex items-center gap-1.5 uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 shadow";
+        statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> ABIERTO';
+      } else {
+        statusBadge.className = "px-2.5 py-1.5 rounded-xl text-xs font-black flex items-center gap-1.5 uppercase bg-red-500/20 text-red-400 border border-red-500/50";
+        statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-red-400"></span> CERRADO';
+      }
+
+      const pickupTimeInput = document.getElementById('input-pickup-time');
+      if (pickupTimeInput && !pickupTimeInput.dataset.modified) {
+        if (isOpen) {
+          const next30 = new Date(now.getTime() + 30 * 60000);
+          const hh = String(Math.min(16, Math.max(10, next30.getHours()))).padStart(2, '0');
+          const mm = String(next30.getMinutes()).padStart(2, '0');
+          pickupTimeInput.value = `${hh}:${mm}`;
+        } else {
+          pickupTimeInput.value = "11:00";
+        }
+      }
+    }
+
+    function quickTimeOffset(mins, btnElem) {
+      const now = new Date();
+      const targetDate = new Date(now.getTime() + mins * 60000);
+      
+      let hours = targetDate.getHours();
+      let minutes = targetDate.getMinutes();
+
+      if (hours < 10) hours = 10;
+      if (hours >= 17) {
+        hours = 16;
+        minutes = 50;
+      }
+
+      const formatted = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+      const timeInput = document.getElementById('input-pickup-time');
+      if (timeInput) {
+        timeInput.value = formatted;
+        timeInput.dataset.modified = "true";
+      }
+
+      document.querySelectorAll('.time-pill').forEach(btn => {
+        btn.classList.remove('bg-brand-flameGold', 'text-black', 'border-brand-flameGold');
+        btn.classList.add('bg-black', 'text-white', 'border-neutral-700');
+      });
+
+      if (btnElem) {
+        btnElem.classList.add('bg-brand-flameGold', 'text-black', 'border-brand-flameGold');
+        btnElem.classList.remove('bg-black', 'text-white', 'border-neutral-700');
+      }
+
+      triggerToast("Hora Fijada", `Pasarás aproximadamente a las ${formatted}`);
+    }
+
+    function renderCatalogItems(activeCategory = 'paquetes') {
+      const container = document.getElementById('products-catalog');
+      if (!container) return;
+
+      const items = CATALOG.filter(item => item.category === activeCategory);
+
+      container.innerHTML = items.map(product => {
+        const hasOptions = product.options && product.options.length > 0;
+        const currentQty = getItemQuantity(product.id);
+
+        return `
+          <div class="bg-brand-card border-2 ${currentQty > 0 ? 'border-brand-flameGold glow-gold' : 'border-neutral-800'} rounded-2xl p-4 transition-all duration-200">
+            
+            <div class="flex items-start justify-between gap-2">
+              <div class="flex-1">
+                <span class="inline-block bg-brand-flameRust/20 border border-brand-flameRust text-brand-flameGold font-black text-[10px] px-2 py-0.5 rounded uppercase tracking-wider mb-1">
+                  ${product.badge}
+                </span>
+                <h3 class="font-slab text-lg text-white uppercase leading-snug">
+                  ${product.title}
+                </h3>
+                <p class="text-xs text-neutral-400 mt-0.5">${product.desc}</p>
+              </div>
+
+              <div class="text-right flex-shrink-0 bg-neutral-900 border border-neutral-700 px-3 py-1.5 rounded-xl">
+                <span class="block text-[10px] uppercase font-bold text-brand-flameGold">PRECIO</span>
+                <span class="font-bebas text-3xl text-white leading-none">$${product.price}</span>
+              </div>
+            </div>
+
+            <!-- Inclusions Pills -->
+            <div class="mt-2.5 bg-black/60 rounded-xl p-2.5 border border-neutral-800">
+              <span class="text-[10px] font-black uppercase text-brand-flameGold tracking-wider block mb-1">
+                <i class="fa-solid fa-circle-check text-brand-flameRust mr-1"></i> Incluye:
+              </span>
+              <div class="flex flex-wrap gap-1">
+                ${product.includes.map(inc => `
+                  <span class="bg-neutral-900 text-neutral-300 text-[11px] px-2 py-0.5 rounded-md border border-neutral-700">
+                    ${inc}
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Flavors & Variations -->
+            ${hasOptions ? `
+              <div class="mt-3">
+                <label class="text-[11px] font-bold text-neutral-300 block mb-1">
+                  <i class="fa-solid fa-sliders text-brand-flameRust mr-1"></i> Elige estilo o salsa:
+                </label>
+                <select id="opt-${product.id}" class="w-full bg-black border-2 border-neutral-700 text-white font-bold rounded-xl py-2 px-3 text-xs focus:border-brand-flameGold focus:outline-none">
+                  ${product.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+                </select>
+              </div>
+            ` : ''}
+
+            <!-- Large Touch Controls: - / + -->
+            <div class="mt-3.5 pt-2.5 border-t border-neutral-800 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2">
+                <button 
+                  type="button"
+                  onclick="modifyItem('${product.id}', -1)"
+                  class="w-12 h-12 rounded-xl bg-neutral-800 hover:bg-neutral-700 active:scale-90 text-white font-bold flex items-center justify-center text-xl transition tap-target"
+                  aria-label="Disminuir"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+
+                <div class="w-12 h-12 rounded-xl bg-black border-2 border-neutral-700 flex items-center justify-center">
+                  <span id="qty-display-${product.id}" class="font-bebas text-2xl text-brand-flameGold">
+                    ${currentQty}
+                  </span>
+                </div>
+
+                <button 
+                  type="button"
+                  onclick="modifyItem('${product.id}', 1)"
+                  class="w-12 h-12 rounded-xl bg-brand-flameGold hover:bg-yellow-400 active:scale-90 text-black font-bold flex items-center justify-center text-xl transition shadow-lg tap-target"
+                  aria-label="Aumentar"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+
+              <!-- Quick Add Action Button -->
+              <button 
+                type="button"
+                onclick="modifyItem('${product.id}', 1)" 
+                class="flex-1 bg-gradient-to-r from-brand-flameRust to-brand-fireGlow active:scale-95 text-white font-slab text-xs uppercase py-3.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-md tap-target"
+              >
+                <i class="fa-solid fa-plus-circle text-base"></i>
+                <span>SUMAR ($${product.price})</span>
+              </button>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    function getItemQuantity(productId) {
+      return cart
+        .filter(item => item.id === productId)
+        .reduce((sum, item) => sum + item.quantity, 0);
+    }
+
+    function modifyItem(productId, delta) {
+      const product = CATALOG.find(p => p.id === productId);
+      if (!product) return;
+
+      const optSelect = document.getElementById(`opt-${productId}`);
+      const selectedOption = optSelect ? optSelect.value : null;
+
+      let item = cart.find(i => i.id === productId && i.selectedOption === selectedOption);
+
+      if (delta > 0) {
+        if (item) {
+          item.quantity += 1;
+        } else {
+          cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            selectedOption: selectedOption,
+            quantity: 1
+          });
+        }
+        triggerToast("¡Agregado!", `${product.title} sumado a tu cuenta`);
+      } else {
+        if (item) {
+          item.quantity -= 1;
+          if (item.quantity <= 0) {
+            cart = cart.filter(i => !(i.id === productId && i.selectedOption === selectedOption));
+          }
+        } else {
+          const fallbackIdx = cart.findIndex(i => i.id === productId);
+          if (fallbackIdx !== -1) {
+            cart[fallbackIdx].quantity -= 1;
+            if (cart[fallbackIdx].quantity <= 0) cart.splice(fallbackIdx, 1);
+          }
+        }
+      }
+
+      const displayElem = document.getElementById(`qty-display-${productId}`);
+      if (displayElem) {
+        displayElem.textContent = getItemQuantity(productId);
+      }
+
+      updateAllUI();
+    }
+
+    function setCategory(categoryName, btnElem) {
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-flameGold', 'text-black', 'border-brand-flameGold');
+        btn.classList.add('bg-brand-surface', 'text-neutral-300', 'border-neutral-700');
+      });
+
+      if (btnElem) {
+        btnElem.classList.add('active', 'bg-brand-flameGold', 'text-black', 'border-brand-flameGold');
+        btnElem.classList.remove('bg-brand-surface', 'text-neutral-300', 'border-neutral-700');
+      }
+
+      renderCatalogItems(categoryName);
+    }
+
+    function updateAllUI() {
+      const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const grandTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      const headerQty = document.getElementById('header-cart-qty');
+      const headerTotal = document.getElementById('header-cart-total');
+      const floatBadgeCount = document.getElementById('float-badge-count');
+      const floatBadgeTotal = document.getElementById('float-badge-total');
+      const summaryItemsCount = document.getElementById('summary-items-count');
+      const summaryTotalPrice = document.getElementById('summary-total-price');
+
+      if (headerQty) headerQty.textContent = `${totalQty}`;
+      if (headerTotal) headerTotal.textContent = `$${grandTotal}`;
+      if (floatBadgeCount) floatBadgeCount.textContent = `${totalQty}`;
+      if (floatBadgeTotal) floatBadgeTotal.textContent = `$${grandTotal} MXN`;
+      if (summaryItemsCount) summaryItemsCount.textContent = `${totalQty} piezas`;
+      if (summaryTotalPrice) summaryTotalPrice.innerHTML = `$${grandTotal} <span class="text-xs font-sans text-brand-flameGold font-bold">MXN</span>`;
+
+      const cartList = document.getElementById('cart-list');
+      if (!cartList) return;
+
+      if (cart.length === 0) {
+        cartList.innerHTML = `
+          <div class="py-6 text-center text-neutral-500">
+            <i class="fa-solid fa-drumstick-bite text-3xl mb-1 text-neutral-700"></i>
+            <p class="font-bold text-xs uppercase">No has sumado productos</p>
+            <p class="text-[11px]">Toca los paquetes arriba para empezar a calcular tu pedido.</p>
+          </div>
+        `;
+        return;
+      }
+
+      cartList.innerHTML = cart.map((item, idx) => `
+        <div class="py-2.5 flex items-center justify-between gap-2">
+          <div class="flex-1 min-w-0">
+            <h4 class="font-bold text-sm text-white truncate">${item.title}</h4>
+            ${item.selectedOption ? `<span class="text-[11px] text-brand-flameGold font-semibold block">${item.selectedOption}</span>` : ''}
+            <span class="text-xs text-neutral-400">$${item.price} c/u</span>
+          </div>
+
+          <div class="flex items-center gap-1.5 flex-shrink-0">
+            <button type="button" onclick="changeCartRow(${idx}, -1)" class="w-8 h-8 rounded-lg bg-neutral-800 text-white font-bold flex items-center justify-center text-xs active:scale-90">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <span class="font-bebas text-lg text-white w-6 text-center">${item.quantity}</span>
+            <button type="button" onclick="changeCartRow(${idx}, 1)" class="w-8 h-8 rounded-lg bg-brand-flameGold text-black font-bold flex items-center justify-center text-xs active:scale-90">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <span class="font-extrabold text-sm text-white w-14 text-right">
+              $${item.price * item.quantity}
+            </span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function changeCartRow(index, delta) {
+      if (!cart[index]) return;
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      
+      const activePill = document.querySelector('.cat-pill.active');
+      const cat = activePill && activePill.textContent.includes('Costillas') ? 'alitas-costillas' : 
+                 (activePill && activePill.textContent.includes('Extras') ? 'extras' : 'paquetes');
+      renderCatalogItems(cat);
+      updateAllUI();
+    }
+
+    function clearEntireCart() {
+      if (cart.length === 0) return;
+      cart = [];
+      updateAllUI();
+      const activePill = document.querySelector('.cat-pill.active');
+      const cat = activePill && activePill.textContent.includes('Costillas') ? 'alitas-costillas' : 
+                 (activePill && activePill.textContent.includes('Extras') ? 'extras' : 'paquetes');
+      renderCatalogItems(cat);
+      triggerToast("Cuenta Limpia", "Se vació el pedido.");
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function triggerToast(title, desc) {
+      const toast = document.getElementById('quick-toast');
+      const head = document.getElementById('toast-head');
+      const body = document.getElementById('toast-body');
+      if (!toast || !head || !body) return;
+
+      head.textContent = title;
+      body.textContent = desc;
+
+      toast.classList.remove('-translate-y-36');
+      toast.classList.add('translate-y-0');
+
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.classList.remove('translate-y-0');
+        toast.classList.add('-translate-y-36');
+      }, 2300);
+    }
+
+    function toggleLogoOptions() {
+      const panel = document.getElementById('logo-options-panel');
+      if (panel) panel.classList.toggle('hidden');
+    }
+
+    function handleLogoUpload(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgElem = document.getElementById('custom-logo-img');
+          const svgElem = document.getElementById('svg-logo-graphic');
+          if (imgElem && svgElem) {
+            imgElem.src = e.target.result;
+            imgElem.classList.remove('hidden');
+            svgElem.classList.add('hidden');
+            toggleLogoOptions();
+            triggerToast("Logo Actualizado", "Imagen personalizada cargada.");
+          }
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function resetLogoToSVG() {
+      const imgElem = document.getElementById('custom-logo-img');
+      const svgElem = document.getElementById('svg-logo-graphic');
+      if (imgElem && svgElem) {
+        imgElem.classList.add('hidden');
+        imgElem.src = "";
+        svgElem.classList.remove('hidden');
+        toggleLogoOptions();
+        triggerToast("Logo Restaurado", "Vector SVG original activado.");
+      }
+    }
+
+    function sendOrderViaWhatsApp() {
+      if (cart.length === 0) {
+        triggerToast("Canasta vacía", "Agrega al menos un paquete antes de enviar.");
+        scrollToSection('products-catalog');
+        return;
+      }
+
+      const nameInput = document.getElementById('input-cust-name');
+      const customerName = nameInput ? nameInput.value.trim() : "";
+
+      if (!customerName) {
+        triggerToast("Falta tu Nombre", "Escribe tu nombre para identificar tu entrega.");
+        if (nameInput) {
+          nameInput.focus();
+          nameInput.classList.add('border-red-500', 'ring-2', 'ring-red-500');
+          setTimeout(() => nameInput.classList.remove('border-red-500', 'ring-2', 'ring-red-500'), 3500);
+        }
+        return;
+      }
+
+      const modes = document.getElementsByName('order-mode');
+      let selectedMode = 'Paso en Coche (Drive-Thru / Sin bajarme)';
+      for (const m of modes) {
+        if (m.checked) {
+          selectedMode = m.value;
+          break;
+        }
+      }
+
+      const carInput = document.getElementById('input-car-info');
+      const carInfo = (carInput && carInput.value.trim()) ? carInput.value.trim() : 'No especificado';
+
+      const timeInput = document.getElementById('input-pickup-time');
+      const timeVal = (timeInput && timeInput.value) ? timeInput.value : 'Lo antes posible';
+
+      const notesInput = document.getElementById('input-notes');
+      const notes = (notesInput && notesInput.value.trim()) ? notesInput.value.trim() : 'Sin notas especiales';
+
+      const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const grandTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      // Structure formatted WhatsApp message for fast kitchen review
+      let waText = `🍗 *MEGA POLLO - NUEVO PEDIDO* 🍗\n`;
+      waText += `_El Mega del Sabor (Horario: 10:00 AM - 5:00 PM)_\n`;
+      waText += `=================================\n`;
+      waText += `👤 *CLIENTE:* ${customerName}\n`;
+      waText += `🚗 *MODO:* ${selectedMode}\n`;
+      if (selectedMode.includes('Coche')) {
+        waText += `🚘 *VEHÍCULO:* ${carInfo}\n`;
+      }
+      waText += `⏰ *HORA DE PASO:* ${timeVal}\n`;
+      waText += `=================================\n`;
+      waText += `📋 *DESGLOSE:* (${totalQty} piezas en total)\n\n`;
+
+      cart.forEach((item, i) => {
+        waText += `${i + 1}. *(${item.quantity}x)* ${item.title}`;
+        if (item.selectedOption) {
+          waText += ` [${item.selectedOption}]`;
+        }
+        waText += ` 👉 *$${item.price * item.quantity} MXN*\n`;
+      });
+
+      waText += `\n=================================\n`;
+      waText += `📝 *NOTAS:* ${notes}\n`;
+      waText += `💰 *TOTAL A COBRAR: $${grandTotal} MXN*\n`;
+      waText += `=================================\n`;
+      waText += `_¡Favor de confirmar recepción para empezar a prepararlo! Muchas gracias._`;
+
+      showConfirmationTicket(customerName, selectedMode, timeVal, grandTotal, notes, carInfo);
+
+      const waURL = `https://wa.me/${restaurantWhatsApp}?text=${encodeURIComponent(waText)}`;
+      window.open(waURL, '_blank');
+    }
+
+    function showConfirmationTicket(name, mode, time, total, notes, car) {
+      const modal = document.getElementById('modal-ticket');
+      const content = document.getElementById('ticket-content');
+      if (!modal || !content) return;
+
+      content.innerHTML = `
+        <div class="text-[10px] text-neutral-400 mb-1.5 pb-1 border-b border-neutral-700">
+          FECHA: ${new Date().toLocaleDateString('es-MX')} • HORA: ${new Date().toLocaleTimeString('es-MX', {hour:'2-digit', minute:'2-digit'})}
+        </div>
+        <div><strong class="text-brand-flameGold">CLIENTE:</strong> ${name}</div>
+        <div><strong class="text-brand-flameGold">ENTREGA:</strong> ${mode}</div>
+        ${car !== 'No especificado' ? `<div><strong class="text-brand-flameGold">VEHÍCULO:</strong> ${car}</div>` : ''}
+        <div><strong class="text-brand-flameGold">HORA DE PASO:</strong> ${time}</div>
+        <div class="border-t border-neutral-700 my-1.5 pt-1.5 space-y-1">
+          ${cart.map(item => `
+            <div class="flex justify-between">
+              <span>${item.quantity}x ${item.title} ${item.selectedOption ? '('+item.selectedOption+')':''}</span>
+              <span class="font-bold">$${item.price * item.quantity}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="border-t border-neutral-700 pt-1 text-[11px] text-neutral-300">
+          <strong>Notas:</strong> ${notes}
+        </div>
+        <div class="border-t border-neutral-700 pt-1 text-sm font-bold text-brand-flameGold flex justify-between">
+          <span>TOTAL:</span>
+          <span>$${total} MXN</span>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal-ticket');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const phoneLabel = document.getElementById('label-target-phone');
+      if (phoneLabel) phoneLabel.textContent = "449 456 6133";
+      
+      renderCatalogItems('paquetes');
+      updateAllUI();
+      checkOperatingHours();
+      setInterval(checkOperatingHours, 60000);
+    });
+  </script>
+</body>
+</html>
